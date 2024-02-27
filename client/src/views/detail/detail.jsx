@@ -7,7 +7,6 @@ import Navbar from "../../components/navbar/navbar";
 
 function Detail() {
   const detail = useSelector((state) => state.detailCountry);
-
   const dispatch = useDispatch();
   let { id } = useParams();
 
@@ -29,10 +28,10 @@ function Detail() {
             />
           </div>
           <div className="detail-data">
-            <h1>Name: {detail.nombre}</h1>
             <h1>ID: {detail.id}</h1>
-            <h1>Continente: {detail.continente}</h1>
+            <h1>Nombre: {detail.nombre}</h1>
             <h1>Capital: {detail.capital}</h1>
+            <h1>Continente: {detail.continente}</h1>
             <h1>Sub-Region: {detail.subRegion}</h1>
             <h1>Area: {detail.area}</h1>
             <h1>Población: {detail.poblacion}</h1>

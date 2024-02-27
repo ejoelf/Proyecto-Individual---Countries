@@ -6,3 +6,8 @@
   background-position: center;
   background-repeat: no-repeat;
 }
+
+.error-container,
+h2 {
+  font-size: 38px;
+}

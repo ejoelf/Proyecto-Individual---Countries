@@ -8,7 +8,7 @@ function Activities() {
   const activities = useSelector((state) => state.activities);
 
   return (
-    <div>
+    <div className="activities-container">
       <Navbar />
       <Link to="/create">
         <button>Crear Actividad</button>
@@ -19,7 +19,7 @@ function Activities() {
             <CardActivity key={activity.nombre} activity={activity} />
           ))
         ) : (
-          <h3>Aun no hay actividades creadas</h3>
+          <h2>Aun no hay actividades creadas</h2>
         )}
       </div>
     </div>

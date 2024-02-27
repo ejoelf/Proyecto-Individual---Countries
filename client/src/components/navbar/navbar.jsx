@@ -4,13 +4,13 @@ import { Link } from "react-router-dom";
 function Navbar({ handleChange, handleSubmit }) {
   return (
     <div className="search-box">
-      <Link to="/Home">
+      <Link to="/home">
         <button>Home</button>
       </Link>
-      <Link to="/Activities">
+      <Link to="/activities">
         <button>Actividades</button>
       </Link>
-      <h2 className="homeTittle">Countries</h2>
+      <h2 className="homeTittle">Por el Mundo</h2>
       <form className="NavForm" onChange={handleChange}>
         <input
           className="inputNavForm"

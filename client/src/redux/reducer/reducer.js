@@ -50,9 +50,16 @@ export const reducer = (state = initialState, action) => {
         return { ...state, allCountries: FilteredCountries };
       }
     case ORDER:
-      if (action.payload === "Alfabeticamente") {
+      if (action.payload === "Alfabeticamente(A-Z)") {
         const orderedCountries = state.allCountries.sort((a, b) => {
           if (a.nombre > b.nombre) return 1;
+          else return -1;
+        });
+        return { ...state, allCountries: orderedCountries };
+      }
+      if (action.payload === "Alfabeticamente(Z-A)") {
+        const orderedCountries = state.allCountries.sort((a, b) => {
+          if (a.nombre < b.nombre) return 1;
           else return -1;
         });
         return { ...state, allCountries: orderedCountries };
@@ -64,9 +71,23 @@ export const reducer = (state = initialState, action) => {
         });
         return { ...state, allCountries: orderedCountries };
       }
+      if (action.payload === "Menor area") {
+        const orderedCountries = state.allCountries.sort((a, b) => {
+          if (Number(a.area) > Number(b.area)) return 1;
+          else return -1;
+        });
+        return { ...state, allCountries: orderedCountries };
+      }
       if (action.payload === "Mayor poblacion") {
         const orderedCountries = state.allCountries.sort((a, b) => {
           if (Number(a.poblacion) < Number(b.poblacion)) return 1;
+          else return -1;
+        });
+        return { ...state, allCountries: orderedCountries };
+      }
+      if (action.payload === "Menor poblacion") {
+        const orderedCountries = state.allCountries.sort((a, b) => {
+          if (Number(a.poblacion) > Number(b.poblacion)) return 1;
           else return -1;
         });
         return { ...state, allCountries: orderedCountries };

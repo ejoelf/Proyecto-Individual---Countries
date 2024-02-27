@@ -14,7 +14,7 @@ import {
 import Navbar from "../../components/navbar/navbar";
 import CardsCountries from "../../components/cards/cardsCountries";
 
-function Home() {
+function Home(handleClearFilters) {
   const dispatch = useDispatch();
   const allCountries = useSelector((state) => state.allCountries);
 
@@ -40,6 +40,7 @@ function Home() {
     setCountriesToShow([...allCountries].splice(0, 10));
   }, [allCountries]);
 
+  //paginado
   const [page, setPage] = useState(1);
 
   const prevHandler = () => {
@@ -82,37 +83,52 @@ function Home() {
     setCountriesToShow([...allCountries].splice(0, 10)); //Para solucionar problema de asincronía y forzar el renderizado actual
     setPage(1);
   };
+
+  const handleClear = () => {
+    dispatch(getAllCountries()); // Vuelve a obtener todos los países para limpiar los filtros
+    handleClearFilters(); // Manejar el restablecimiento de otros estados si es necesario
+  };
+
   return (
     <div className="homeStyle">
       <Navbar handleChange={handleChange} handleSubmit={handleSubmit} />
 
       <div>
         <select onChange={handleOrder}>
-          <option value="" disabled selected>
+          <option disabled selected>
             Ordenar
           </option>
 
-          <option value="Alfabeticamente">Alfabeticamente</option>
+          <option value="Alfabeticamente(A-Z)">A-Z</option>
+          <option value="Alfabeticamente(Z-A)">Z-A</option>
           <option value="Mayor area">Mayor Área</option>
+          <option value="Menor area">Menor Área</option>
           <option value="Mayor poblacion">Mayor Población</option>
+          <option value="Menor poblacion">Menor Población</option>
         </select>
         <select onChange={handleFilter}>
-          <option value="" disabled selected>
-            Continente
+          <option disabled selected>
+            Continentes
           </option>
           <option value="Todos">Todos</option>
           <option value="America">América</option>
-          <option value="{Asia}">Asia</option>
-          <option value="{Africa}">África</option>
-          <option value="{Europe}">Europe</option>
-          <option value="{Antarctica}">Antarctica</option>
-          <option value="{Oceania}">Oceanía</option>
+          <option value="Asia">Asia</option>
+          <option value="Africa">África</option>
+          <option value="Europe">Europe</option>
+          <option value="Antarctica">Antarctica</option>
+          <option value="Oceania">Oceanía</option>
         </select>
         <select onChange={handleFilterByAct}>
+          <option disabled selected>
+            Actividades
+          </option>
           {activities?.map((act) => {
             return <option value={act.nombre}>{act.nombre}</option>;
           })}
         </select>
+        <button className="clearFiltered" onClick={handleClear}>
+          Limpiar Filtros
+        </button>
       </div>
       <CardsCountries
         countriesToShow={countriesToShow}
