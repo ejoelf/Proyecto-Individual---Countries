@@ -1,0 +1,7 @@
+export const GET_ALL_COUNTRIES = "GET_ALL_COUNTRIES";
+export const GET_COUNTRY_BY_NAME = "GET_COUNTRY_BY_NAME";
+export const GET_DETAIL_COUNTRY = "GET_DETAIL_COUNTRY";
+export const POST_NEW_ACTIVITY = "POST_NEW_ACTIVITY";
+export const FILTER = "FILTER";
+export const ORDER = "ORDER";
+export const FILTER_ACT = "FILTER_ACT";

@@ -1,0 +1,82 @@
+.formStyles {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  div {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  span {
+    color: red;
+    font-size: 14px;
+  }
+  
+  button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  ul li {
+    margin-bottom: 5px;
+  }
+
+/*   Nombre de países con la cruz para quitar de lista de asociados */
+.country-item {
+    display: flex;
+    align-items: center;
+    /* background-color: #007bff; */
+    
+  }
+  
+  .country-item li {
+    margin-right: 10px; 
+  }
+  
+  .country-item button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #dc3545;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .country-item button:hover {
+    background-color: #c82333; 
+  }
+  
+  /* .dataListStyle{
+    background-color: #007bff;
+    color:#007bff;
+  } */

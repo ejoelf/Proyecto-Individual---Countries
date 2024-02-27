@@ -1,0 +1,22 @@
+.detail-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .imgdetailStyle{
+    width: 500px; 
+    height: auto; 
+    border-radius: 30px;
+  }
+  
+  .detail-data {
+    max-width: 500px; 
+    text-align: left;
+    text-decoration: overline underline;
+  }
+  
+  .detail-data h1, .detail-data h3 {
+    margin: 10px 0;
+  }
