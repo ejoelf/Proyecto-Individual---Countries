@@ -3,17 +3,19 @@ body {
   padding: 0;
   text-align: center;
 }
+.container {
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/img/home.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
 .homeStyle {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background-image: url("../../assets/img/home.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .clearFiltered,
@@ -22,4 +24,11 @@ select {
   color: white;
   border: none;
   height: 35px;
+  margin: 5px;
+  border-radius: 25px;
+}
+
+.clearFiltered:hover {
+  background-color: #676767;
+  transition: 0.3s ease-in-out;
 }

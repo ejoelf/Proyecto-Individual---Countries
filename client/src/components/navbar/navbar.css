@@ -14,29 +14,22 @@
   padding: 8px 15px;
   border: none;
   border-radius: 5px;
-  background-color: #0056b3;
+  background-color: #242323;
   color: #fff;
   cursor: pointer;
 }
 
 .search-box button:hover {
-  background-color: #003366;
+  background-color: #676767;
+  transition: 0.3s ease-in-out;
 }
 
 .homeTittle {
   margin: 0;
-  color: #fff;
-  /* color:#99c2ff */
+  color: white;
 }
 
 .NavForm {
   display: flex;
   align-items: center;
-}
-
-.inputNavForm {
-  padding: 8px;
-  margin-right: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
 }

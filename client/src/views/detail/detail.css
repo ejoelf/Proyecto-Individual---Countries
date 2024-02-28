@@ -18,9 +18,9 @@
 }
 
 .detail-data {
+  background-color: hsla(0, 0%, 100%, 0.297);
   max-width: 500px;
   text-align: left;
-  text-decoration: overline underline;
 }
 
 .detail-data h1,

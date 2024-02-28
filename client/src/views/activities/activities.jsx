@@ -11,7 +11,7 @@ function Activities() {
     <div className="activities-container">
       <Navbar />
       <Link to="/create">
-        <button>Crear Actividad</button>
+        <button className="btn-create">Crear Actividad</button>
       </Link>
       <div className="card-act">
         {activities.length ? (

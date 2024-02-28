@@ -19,7 +19,7 @@ const saveCountriesInDb = async () => {
       }) => {
         capital
           ? countriesFiltered.push({
-              nombre: name.official,
+              nombre: name.common,
               id: cca3,
               imagenBandera: flags.png,
               continente: continents,

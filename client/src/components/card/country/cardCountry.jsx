@@ -10,7 +10,6 @@ function CardCountry({ country }) {
         <div className="flip-card-inner">
           <div className="flip-card-front">
             <img src={imagenBandera} alt="bandera" />
-            <p>{nombre}</p>
           </div>
           <div className="flip-card-back">
             <p>Nombre: {nombre}</p>

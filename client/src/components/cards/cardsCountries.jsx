@@ -7,8 +7,12 @@ function CardsCountries({ countriesToShow, prevHandler, nextHandler, pagina }) {
   return (
     <div>
       <h4 className="paginaStyle">Página N°: {pagina}</h4>
-      <button onClick={prevHandler}>⬅️</button>
-      <button onClick={nextHandler}>➡️</button>
+      <button className="btn-change" onClick={prevHandler}>
+        anterior
+      </button>
+      <button className="btn-change" onClick={nextHandler}>
+        siguiente
+      </button>
 
       <div className="card-list">
         {countriesList.length ? (

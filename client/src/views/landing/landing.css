@@ -17,7 +17,12 @@
 
 .landing-container button {
   font-size: 18px;
+  background-color: black;
   letter-spacing: 1.5px;
   font-weight: bold;
   transition: all 0.3s ease-in-out;
+}
+
+.landing-container button:hover {
+  background-color: #676767;
 }

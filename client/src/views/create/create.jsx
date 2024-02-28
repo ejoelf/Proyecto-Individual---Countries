@@ -22,7 +22,7 @@ function Create() {
   });
 
   const [error, setError] = useState({
-    nombre: ".",
+    nombre: "",
     dificultad: "",
     duracion: "",
     temporada: "",
@@ -100,7 +100,6 @@ function Create() {
 
   //Para evitar problemas de asincronía, pues los manejos de estados no se actualizaban inmediatamente
   useEffect(() => {
-    /* console.log("Selected Countries Id:", selectedCountriesId); */
     setInput({
       ...input,
       countryId: selectedCountriesId,
@@ -113,7 +112,7 @@ function Create() {
   };
 
   return (
-    <div>
+    <div className="container-create">
       <Navbar />
       <form onSubmit={handleSubmit} className="formStyles">
         <div>
@@ -134,15 +133,13 @@ function Create() {
             onChange={handleChange}
             value={input.value}
           />
-          {input.dificultad /* !== '' */ ? (
-            <span>{error.dificultad}</span>
-          ) : null}
+          {input.dificultad ? <span>{error.dificultad}</span> : null}
         </div>
         <div>
           <label>Duracion</label>
           <input
-            placeholder="Duración en horas"
             name="duracion"
+            placeholder="duracion"
             onChange={handleChange}
             value={input.value}
           />

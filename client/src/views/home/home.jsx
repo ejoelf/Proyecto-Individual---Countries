@@ -90,52 +90,54 @@ function Home(handleClearFilters) {
   };
 
   return (
-    <div className="homeStyle">
-      <Navbar handleChange={handleChange} handleSubmit={handleSubmit} />
+    <div className="container">
+      <div className="homeStyle">
+        <Navbar handleChange={handleChange} handleSubmit={handleSubmit} />
 
-      <div>
-        <select onChange={handleOrder}>
-          <option disabled selected>
-            Ordenar
-          </option>
+        <div>
+          <select onChange={handleOrder}>
+            <option disabled selected>
+              Ordenar
+            </option>
 
-          <option value="Alfabeticamente(A-Z)">A-Z</option>
-          <option value="Alfabeticamente(Z-A)">Z-A</option>
-          <option value="Mayor area">Mayor Área</option>
-          <option value="Menor area">Menor Área</option>
-          <option value="Mayor poblacion">Mayor Población</option>
-          <option value="Menor poblacion">Menor Población</option>
-        </select>
-        <select onChange={handleFilter}>
-          <option disabled selected>
-            Continentes
-          </option>
-          <option value="Todos">Todos</option>
-          <option value="America">América</option>
-          <option value="Asia">Asia</option>
-          <option value="Africa">África</option>
-          <option value="Europe">Europe</option>
-          <option value="Antarctica">Antarctica</option>
-          <option value="Oceania">Oceanía</option>
-        </select>
-        <select onChange={handleFilterByAct}>
-          <option disabled selected>
-            Actividades
-          </option>
-          {activities?.map((act) => {
-            return <option value={act.nombre}>{act.nombre}</option>;
-          })}
-        </select>
-        <button className="clearFiltered" onClick={handleClear}>
-          Limpiar Filtros
-        </button>
+            <option value="Alfabeticamente(A-Z)">A-Z</option>
+            <option value="Alfabeticamente(Z-A)">Z-A</option>
+            <option value="Mayor area">Mayor Área</option>
+            <option value="Menor area">Menor Área</option>
+            <option value="Mayor poblacion">Mayor Población</option>
+            <option value="Menor poblacion">Menor Población</option>
+          </select>
+          <select onChange={handleFilter}>
+            <option disabled selected>
+              Continentes
+            </option>
+            <option value="Todos">Todos</option>
+            <option value="America">América</option>
+            <option value="{Asia}">Asia</option>
+            <option value="{Africa}">África</option>
+            <option value="{Europe}">Europe</option>
+            <option value="{Antarctica}">Antarctica</option>
+            <option value="{Oceania}">Oceanía</option>
+          </select>
+          <select onChange={handleFilterByAct}>
+            <option disabled selected>
+              Actividades
+            </option>
+            {activities?.map((act) => {
+              return <option value={act.nombre}>{act.nombre}</option>;
+            })}
+          </select>
+          <button className="clearFiltered" onClick={handleClear}>
+            Limpiar Filtros
+          </button>
+        </div>
+        <CardsCountries
+          countriesToShow={countriesToShow}
+          prevHandler={prevHandler}
+          nextHandler={nextHandler}
+          pagina={page}
+        />
       </div>
-      <CardsCountries
-        countriesToShow={countriesToShow}
-        prevHandler={prevHandler}
-        nextHandler={nextHandler}
-        pagina={page}
-      />
     </div>
   );
 }
