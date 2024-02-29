@@ -8,7 +8,7 @@ function CardActivity({ activity }) {
       <p>ID: {id}</p>
       <p>Nombre: {nombre}</p>
       <p>Dificultad: {dificultad}</p>
-      <p>Duración: {duracion}</p>
+      <p>Duración: {duracion} horas</p>
       <p>Temporada: {temporada}</p>
     </div>
   );

@@ -12,7 +12,7 @@ const validateCreate = (input) => {
     error.dificultad = "La dificultad debe ser entre 1 y 5";
   }
 
-  if (isNaN(input.duracion) || input.duracion <= 0) {
+  if (input.duracion < 0 || input.duracion > 24) {
     error.duracion = "La duracion debe estar en horas";
   }
 

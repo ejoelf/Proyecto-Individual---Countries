@@ -5,6 +5,7 @@ import validateCreate from "../../validator/validateCreate";
 import { getAllCountries, postNewActivity } from "../../redux/actions/actions";
 import { useDispatch, useSelector } from "react-redux";
 import Navbar from "../../components/navbar/navbar";
+import { Link } from "react-router-dom";
 
 function Create() {
   const dispatch = useDispatch();
@@ -17,7 +18,7 @@ function Create() {
 
   const [input, setInput] = useState({
     nombre: "",
-    dificultad: 0,
+    dificultad: "",
     duracion: "",
     temporada: "",
     countryId: "",
@@ -81,7 +82,7 @@ function Create() {
     setSelectedCountriesId((prevSelectedCountriesId) => [
       ...prevSelectedCountriesId,
       countryIdToAdd,
-    ]); //CB, para manejar asincronía
+    ]);
   };
 
   const handleQuitar = (event) => {
@@ -118,6 +119,7 @@ function Create() {
         <div>
           <label>Nombre</label>
           <input
+            type="text"
             placeholder="Nombre de la actividad"
             name="nombre"
             onChange={handleChange}
@@ -128,6 +130,9 @@ function Create() {
         <div>
           <label>Dificultad</label>
           <input
+            type="number"
+            min="1"
+            max="5"
             placeholder="1-5"
             name="dificultad"
             onChange={handleChange}
@@ -138,8 +143,10 @@ function Create() {
         <div>
           <label>Duracion</label>
           <input
+            type="time"
+            step="3600"
             name="duracion"
-            placeholder="duracion"
+            placeholder="duracion en horas"
             onChange={handleChange}
             value={input.value}
           />
@@ -148,7 +155,8 @@ function Create() {
         <div>
           <label>Temporada</label>
           <input
-            placeholder="Verano,Otoño,Invierno,Primavera"
+            type="text"
+            placeholder="Verano - Otoño - Invierno - Primavera"
             name="temporada"
             onChange={handleChange}
             value={input.value}
@@ -160,6 +168,7 @@ function Create() {
 
           <input
             name="countryId"
+            placeholder="Elija  un pais"
             onChange={countryChange}
             value={inputCountry}
             list="countries"
@@ -193,6 +202,9 @@ function Create() {
           <button type="submit">Crear</button>
         )}
       </form>
+      <Link to="/activities">
+        <button>volver</button>
+      </Link>
     </div>
   );
 }
