@@ -1,12 +1,13 @@
 const { Router } = require("express");
 
+const {
+  getCountries,
+  getCountryById,
+} = require("../handlers/countriesHandler");
+
 const countriesRouter = Router();
 
-const {getCountries,getCountryById}= require('../handlers/countriesHandler');
+countriesRouter.get("/", getCountries);
+countriesRouter.get("/:id", getCountryById);
 
-
-countriesRouter.get('/',getCountries)
-countriesRouter.get('/:id',getCountryById)
-
-
-module.exports= countriesRouter;
+module.exports = countriesRouter;

@@ -19,7 +19,6 @@ const getCountries = async (req, res) => {
 
 const getCountryById = async (req, res) => {
   const { id } = req.params;
-
   try {
     const response = await countryById(id);
     res.status(200).json(response);

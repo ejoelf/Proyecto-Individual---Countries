@@ -34,11 +34,10 @@ let capsEntries = entries.map((entry) => [
 ]);
 sequelize.models = Object.fromEntries(capsEntries);
 
-const { Country } = sequelize.models;
-
+// const { Country } = sequelize.models;
 // Aca vendrian las relaciones
 // Product.hasMany(Reviews);
-const { Activity } = sequelize.models;
+const { Activity, Country } = sequelize.models;
 Country.belongsToMany(Activity, { through: "country_activity" });
 Activity.belongsToMany(Country, { through: "country_activity" });
 

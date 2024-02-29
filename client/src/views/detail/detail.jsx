@@ -1,9 +1,9 @@
-import "./detail.css";
 import { getDetailCountry } from "../../redux/actions/actions";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import Navbar from "../../components/navbar/navbar";
+import "./detail.css";
 
 function Detail() {
   const detail = useSelector((state) => state.detailCountry);
@@ -12,7 +12,7 @@ function Detail() {
 
   useEffect(() => {
     dispatch(getDetailCountry(id));
-  }, [id]);
+  }, []);
 
   return (
     <div>

@@ -1,5 +1,5 @@
-import CardActivity from "../../components/card/activity/cardActivity";
 import Navbar from "../../components/navbar/navbar";
+import CardActivity from "../../components/card/activity/cardActivity";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "./activities.css";

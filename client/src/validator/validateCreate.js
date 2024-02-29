@@ -4,6 +4,9 @@ const validateCreate = (input) => {
   if (input.nombre.length < 1) {
     error.nombre = "El nombre no puede estar vacío";
   }
+  if (typeof input.nombre === "number") {
+    error.nombre = "El nombre debe ser un texto";
+  }
 
   if (input.dificultad < 1 || input.dificultad > 5 || isNaN(input.dificultad)) {
     error.dificultad = "La dificultad debe ser entre 1 y 5";
