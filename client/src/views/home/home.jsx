@@ -14,11 +14,41 @@ import {
 import Navbar from "../../components/navbar/navbar";
 import CardsCountries from "../../components/cards/cardsCountries";
 
-function Home(handleClearFilters) {
+function Home() {
   const dispatch = useDispatch();
-  const allCountries = useSelector((state) => state.allCountries);
 
+  const allCountries = useSelector((state) => state.allCountries);
+  const activities = useSelector((state) => state.activities);
+
+  const [countriesToShow, setCountriesToShow] = useState([]);
   const [searchString, setSearchString] = useState("");
+  const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    dispatch(getAllCountries());
+  }, [dispatch]);
+
+  useEffect(() => {
+    setCountriesToShow([...allCountries].splice(0, 10));
+  }, [allCountries]);
+
+  //paginado
+  const prevHandler = () => {
+    const prevPage = page - 1;
+    if (prevPage < 1) return;
+    const firstCountry = (prevPage - 1) * 10;
+    setPage(prevPage);
+    setCountriesToShow([...allCountries].splice(firstCountry, 10));
+  };
+
+  const nextHandler = () => {
+    const totalCountries = allCountries.length;
+    const nextPage = page + 1;
+    const firstCountry = page * 10;
+    if (firstCountry > totalCountries) return;
+    setPage(nextPage);
+    setCountriesToShow([...allCountries].splice(firstCountry, 10));
+  };
 
   const handleChange = (event) => {
     event.preventDefault();
@@ -30,53 +60,15 @@ function Home(handleClearFilters) {
     dispatch(getCountriesByName(searchString));
   };
 
-  useEffect(() => {
-    dispatch(getAllCountries());
-  }, [dispatch]);
-
-  const [countriesToShow, setCountriesToShow] = useState([]);
-
-  useEffect(() => {
-    setCountriesToShow([...allCountries].splice(0, 10));
-  }, [allCountries]);
-
-  //paginado
-  const [page, setPage] = useState(1);
-
-  const prevHandler = () => {
-    const prevPage = page - 1;
-
-    if (prevPage < 1) return;
-
-    const firstCountry = (prevPage - 1) * 10;
-
-    setPage(prevPage);
-    setCountriesToShow([...allCountries].splice(firstCountry, 10));
-  };
-
-  const nextHandler = () => {
-    const totalCountries = allCountries.length;
-
-    const nextPage = page + 1;
-
-    const firstCountry = page * 10;
-
-    if (firstCountry > totalCountries) return;
-    setPage(nextPage);
-    setCountriesToShow([...allCountries].splice(firstCountry, 10));
-  };
-
   const handleOrder = (event) => {
     dispatch(orderCards(event.target.value));
-    setCountriesToShow([...allCountries].splice(0, 10)); //Para solucionar problema de asincronía y forzar el renderizado actual
+    setCountriesToShow([...allCountries].splice(0, 10));
     setPage(1);
   };
   const handleFilter = (event) => {
     dispatch(filterCards(event.target.value));
     setPage(1);
   };
-
-  const activities = useSelector((state) => state.activities);
 
   const handleFilterByAct = (event) => {
     dispatch(filterByActivity(event.target.value));
@@ -86,7 +78,7 @@ function Home(handleClearFilters) {
 
   const handleClear = () => {
     dispatch(getAllCountries()); // Vuelve a obtener todos los países para limpiar los filtros
-    handleClearFilters(); // Manejar el restablecimiento de otros estados si es necesario
+    // handleClearFilters(); // Manejar el restablecimiento de otros estados si es necesario
   };
 
   return (

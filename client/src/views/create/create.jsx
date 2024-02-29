@@ -8,7 +8,9 @@ import Navbar from "../../components/navbar/navbar";
 
 function Create() {
   const dispatch = useDispatch();
+
   const allCountries = useSelector((state) => state.allCountries);
+
   useEffect(() => {
     dispatch(getAllCountries());
   }, [dispatch]);
@@ -66,7 +68,6 @@ function Create() {
     if (country) {
       setExiste(true);
       setCountryToAdd(country?.nombre);
-
       setCountryIdToAdd(idFound);
     }
   };
@@ -98,7 +99,6 @@ function Create() {
     );
   };
 
-  //Para evitar problemas de asincronía, pues los manejos de estados no se actualizaban inmediatamente
   useEffect(() => {
     setInput({
       ...input,
