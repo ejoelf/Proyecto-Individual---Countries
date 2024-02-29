@@ -91,7 +91,6 @@ function Home() {
             <option disabled selected>
               Ordenar
             </option>
-
             <option value="Alfabeticamente(A-Z)">A-Z</option>
             <option value="Alfabeticamente(Z-A)">Z-A</option>
             <option value="Mayor area">Mayor Área</option>
@@ -99,6 +98,7 @@ function Home() {
             <option value="Mayor poblacion">Mayor Población</option>
             <option value="Menor poblacion">Menor Población</option>
           </select>
+
           <select onChange={handleFilter}>
             <option disabled selected>
               Continentes
@@ -111,6 +111,7 @@ function Home() {
             <option value="{Antarctica}">Antarctica</option>
             <option value="{Oceania}">Oceanía</option>
           </select>
+
           <select onChange={handleFilterByAct}>
             <option disabled selected>
               Actividades
@@ -123,6 +124,7 @@ function Home() {
             Limpiar Filtros
           </button>
         </div>
+
         <CardsCountries
           countriesToShow={countriesToShow}
           prevHandler={prevHandler}
