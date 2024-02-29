@@ -23,7 +23,8 @@
   text-align: left;
 }
 
-.detail-data h1,
-.detail-data h3 {
+.detail-data h2 {
+  text-align: start;
+  color: black;
   margin: 10px 0;
 }

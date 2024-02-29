@@ -63,22 +63,20 @@ function Home() {
   const handleOrder = (event) => {
     dispatch(orderCards(event.target.value));
     setCountriesToShow([...allCountries].splice(0, 10));
-    setPage(1);
   };
+
   const handleFilter = (event) => {
     dispatch(filterCards(event.target.value));
-    setPage(1);
+    setCountriesToShow([...allCountries].splice(0, 10));
   };
 
   const handleFilterByAct = (event) => {
     dispatch(filterByActivity(event.target.value));
-    setCountriesToShow([...allCountries].splice(0, 10)); //Para solucionar problema de asincronía y forzar el renderizado actual
-    setPage(1);
+    setCountriesToShow([...allCountries].splice(0, 10));
   };
 
   const handleClear = () => {
-    dispatch(getAllCountries()); // Vuelve a obtener todos los países para limpiar los filtros
-    // handleClearFilters(); // Manejar el restablecimiento de otros estados si es necesario
+    dispatch(getAllCountries());
   };
 
   return (
@@ -105,11 +103,11 @@ function Home() {
             </option>
             <option value="Todos">Todos</option>
             <option value="America">América</option>
-            <option value="{Asia}">Asia</option>
-            <option value="{Africa}">África</option>
-            <option value="{Europe}">Europe</option>
-            <option value="{Antarctica}">Antarctica</option>
-            <option value="{Oceania}">Oceanía</option>
+            <option value="Asia">Asia</option>
+            <option value="Africa">África</option>
+            <option value="Europe">Europe</option>
+            <option value="Antarctica">Antarctica</option>
+            <option value="Oceania">Oceanía</option>
           </select>
 
           <select onChange={handleFilterByAct}>

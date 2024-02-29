@@ -38,8 +38,8 @@ export const reducer = (state = initialState, action) => {
         state.allCountries = state.allCountriesCopy;
         const FilteredCountries = state.allCountries.filter(
           (country) =>
-            country.continente == '{"North America"}' ||
-            country.continente == '{"South America"}'
+            country.continente == "North America" ||
+            country.continente == "South America"
         );
         return { ...state, allCountries: FilteredCountries };
       } else {

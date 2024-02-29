@@ -28,17 +28,18 @@ function Detail() {
             />
           </div>
           <div className="detail-data">
-            <h1>ID: {detail.id}</h1>
-            <h1>Nombre: {detail.nombre}</h1>
-            <h1>Capital: {detail.capital}</h1>
-            <h1>Continente: {detail.continente}</h1>
-            <h1>Sub-Region: {detail.subRegion}</h1>
-            <h1>Area: {detail.area}</h1>
-            <h1>Población: {detail.poblacion}</h1>
+            <h2>ID: {detail.id}</h2>
+            <h2>Nombre: {detail.nombre}</h2>
+            <h2>Capital: {detail.capital}</h2>
+            <h2>Continente: {detail.continente}</h2>
+            <h2>Sub-Region: {detail.subRegion}</h2>
+            <h2>Area: {detail.area}</h2>
+            <h2>Población: {detail.poblacion}</h2>
+
             {detail.Activities?.map((act) => (
-              <div>
-                <h3>Actividad: {act.nombre}</h3>
-                <h3>Temporada: {act.temporada}</h3>
+              <div className="detail-activity">
+                <h2>Actividad: {act.nombre}</h2>
+                <h2>Temporada: {act.temporada}</h2>
               </div>
             ))}
           </div>
