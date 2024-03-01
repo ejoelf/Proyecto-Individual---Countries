@@ -3,6 +3,7 @@ import {
   GET_COUNTRY_BY_NAME,
   GET_DETAIL_COUNTRY,
   POST_NEW_ACTIVITY,
+  GET_ALL_ACTIVITIES,
   FILTER,
   ORDER,
   FILTER_ACT,
@@ -24,7 +25,11 @@ export const reducer = (state = initialState, action) => {
         allCountries: action.payload,
         allCountriesCopy: action.payload,
       };
-
+    case GET_ALL_ACTIVITIES:
+      return {
+        ...state,
+        activities: action.payload,
+      };
     case GET_COUNTRY_BY_NAME:
       return { ...state, allCountries: action.payload };
     case GET_DETAIL_COUNTRY:

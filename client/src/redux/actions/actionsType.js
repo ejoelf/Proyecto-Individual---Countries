@@ -5,3 +5,4 @@ export const POST_NEW_ACTIVITY = "POST_NEW_ACTIVITY";
 export const FILTER = "FILTER";
 export const ORDER = "ORDER";
 export const FILTER_ACT = "FILTER_ACT";
+export const GET_ALL_ACTIVITIES = "GET_ALL_ACTIVITIES";

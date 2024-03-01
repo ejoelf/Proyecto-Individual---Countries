@@ -1,6 +1,7 @@
 import axios from "axios";
 import {
   GET_ALL_COUNTRIES,
+  GET_ALL_ACTIVITIES,
   GET_COUNTRY_BY_NAME,
   GET_DETAIL_COUNTRY,
   POST_NEW_ACTIVITY,
@@ -10,6 +11,22 @@ import {
 } from "./actionsType";
 
 const URL = "http://localhost:5000/";
+
+export const getAllActivities = () => {
+  try {
+    const endpoint = `${URL}activities`;
+    return async (dispatch) => {
+      const { data } = await axios.get(endpoint);
+      return dispatch({
+        type: GET_ALL_ACTIVITIES,
+        payload: data,
+      });
+    };
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
 
 export const getAllCountries = () => {
   try {

@@ -1,11 +1,18 @@
 import Navbar from "../../components/navbar/navbar";
 import CardActivity from "../../components/card/activity/cardActivity";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import "./activities.css";
+import { useEffect } from "react";
+import { getAllActivities } from "../../redux/actions/actions";
 
 function Activities() {
+  const dispatch = useDispatch();
   const activities = useSelector((state) => state.activities);
+
+  useEffect(() => {
+    dispatch(getAllActivities());
+  }, [dispatch]);
 
   return (
     <div className="activities-container">
