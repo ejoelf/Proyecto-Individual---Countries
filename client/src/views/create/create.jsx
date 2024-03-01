@@ -168,7 +168,7 @@ function Create() {
 
           <input
             name="countryId"
-            placeholder="Elija  un pais"
+            placeholder="Elija un pais"
             onChange={countryChange}
             value={inputCountry}
             list="countries"
