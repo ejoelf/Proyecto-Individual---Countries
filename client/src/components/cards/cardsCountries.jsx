@@ -6,7 +6,7 @@ function CardsCountries({ countriesToShow, prevHandler, nextHandler, pagina }) {
 
   return (
     <div>
-      <h4 className="paginaStyle">Página N°: {pagina}</h4>
+      <h2 className="paginaStyle">Página N°: {pagina}</h2>
       <button className="btn-change" onClick={prevHandler}>
         anterior
       </button>

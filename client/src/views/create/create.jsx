@@ -143,8 +143,6 @@ function Create() {
         <div>
           <label>Duracion</label>
           <input
-            type="time"
-            step="3600"
             name="duracion"
             placeholder="duracion en horas"
             onChange={handleChange}

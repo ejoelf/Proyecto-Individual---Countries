@@ -53,30 +53,37 @@ function Home() {
   const handleChange = (event) => {
     event.preventDefault();
     setSearchString(event.target.value);
+    setPage(1);
+    setSearchString("");
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch(getCountriesByName(searchString));
+    setPage(1);
   };
 
   const handleOrder = (event) => {
     dispatch(orderCards(event.target.value));
     setCountriesToShow([...allCountries].splice(0, 10));
+    setPage(1);
   };
 
   const handleFilter = (event) => {
     dispatch(filterCards(event.target.value));
     setCountriesToShow([...allCountries].splice(0, 10));
+    setPage(1);
   };
 
   const handleFilterByAct = (event) => {
     dispatch(filterByActivity(event.target.value));
     setCountriesToShow([...allCountries].splice(0, 10));
+    setPage(1);
   };
 
   const handleClear = () => {
     dispatch(getAllCountries());
+    setPage(1);
   };
 
   return (
