@@ -10,7 +10,7 @@ const validateCreate = (input) => {
   }
 
   if (input.duracion < 0 || input.duracion > 24) {
-    error.duracion = "La duracion debe estar en horas";
+    error.duracion = "La duración debe estar en horas";
   }
 
   if (input.temporada) {
